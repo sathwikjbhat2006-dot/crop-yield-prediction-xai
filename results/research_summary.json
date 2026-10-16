@@ -1,0 +1,752 @@
+{
+  "training_timestamp": "2026-10-15T18:55:53.455926",
+  "selected_model": "XGBoost",
+  "selection_metric": "CV_R2",
+  "selected_score": 0.931735,
+  "training_rows": 15545,
+  "feature_count": 101,
+  "all_models": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 2.6665077598295577,
+      "RMSE": 6.152811070672939,
+      "R2": 0.6671156629464982,
+      "CV_R2": 0.7047127071120342,
+      "SMAPE": 94.84514792157037
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 0.876107508880185,
+      "RMSE": 3.001301842961915,
+      "R2": 0.9207926376266814,
+      "CV_R2": 0.8993965421120167,
+      "SMAPE": 29.245212444548873
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 0.9250651612918056,
+      "RMSE": 2.6867214011577993,
+      "R2": 0.9365266425629118,
+      "CV_R2": 0.9277401761440054,
+      "SMAPE": 33.1475334656646
+    },
+    {
+      "Model": "XGBoost",
+      "MAE": 1.0539811194225488,
+      "RMSE": 2.6887053360838453,
+      "R2": 0.93643286767111,
+      "CV_R2": 0.931734537310198,
+      "SMAPE": 38.921888746702244
+    }
+  ],
+  "top_10_crops": [
+    {
+      "Crop": "Tapioca",
+      "Samples": 35,
+      "MAE": 2.8715150822839006,
+      "RMSE": 4.134660975698878,
+      "R2": 0.8798363621700707
+    },
+    {
+      "Crop": "Sugarcane",
+      "Samples": 124,
+      "MAE": 7.617231236956252,
+      "RMSE": 11.290994206385214,
+      "R2": 0.8589209870656976
+    },
+    {
+      "Crop": "Banana",
+      "Samples": 44,
+      "MAE": 4.851593373119912,
+      "RMSE": 6.9043952290810156,
+      "R2": 0.8413959988890811
+    },
+    {
+      "Crop": "Bajra",
+      "Samples": 122,
+      "MAE": 0.7518870672363654,
+      "RMSE": 1.893357955260358,
+      "R2": 0.8353075661040094
+    },
+    {
+      "Crop": "Onion",
+      "Samples": 86,
+      "MAE": 3.0512579021627704,
+      "RMSE": 4.023048011558877,
+      "R2": 0.7337307019806865
+    },
+    {
+      "Crop": "Jute",
+      "Samples": 37,
+      "MAE": 2.2255571766043825,
+      "RMSE": 2.7457510389260724,
+      "R2": 0.7057689210490778
+    },
+    {
+      "Crop": "Potato",
+      "Samples": 130,
+      "MAE": 2.57063706493273,
+      "RMSE": 3.5973135393614446,
+      "R2": 0.6954784976862973
+    },
+    {
+      "Crop": "Garlic",
+      "Samples": 57,
+      "MAE": 1.629166656108104,
+      "RMSE": 2.4545833725705184,
+      "R2": 0.6117056787918371
+    },
+    {
+      "Crop": "Wheat",
+      "Samples": 112,
+      "MAE": 0.5281449483627076,
+      "RMSE": 0.7031345571535788,
+      "R2": 0.5955577131510632
+    },
+    {
+      "Crop": "Ginger",
+      "Samples": 75,
+      "MAE": 3.0289567706616456,
+      "RMSE": 4.390219344888787,
+      "R2": 0.5770841534493828
+    }
+  ],
+  "bottom_10_crops": [
+    {
+      "Crop": "Horse-gram",
+      "Samples": 70,
+      "MAE": 0.21774892340241384,
+      "RMSE": 0.27761023267620755,
+      "R2": -0.8140473602345528
+    },
+    {
+      "Crop": "Sesamum",
+      "Samples": 136,
+      "MAE": 0.2534569956289848,
+      "RMSE": 0.32998205585941764,
+      "R2": -0.9679641390215616
+    },
+    {
+      "Crop": "Guar seed",
+      "Samples": 11,
+      "MAE": 0.1604637780260398,
+      "RMSE": 0.2166344704310265,
+      "R2": -1.1150449904105915
+    },
+    {
+      "Crop": "Khesari",
+      "Samples": 18,
+      "MAE": 0.2899630994051211,
+      "RMSE": 0.41764971323805133,
+      "R2": -1.1638487214759614
+    },
+    {
+      "Crop": "Other Cereals",
+      "Samples": 26,
+      "MAE": 0.4147272593799614,
+      "RMSE": 0.5121397043804691,
+      "R2": -1.4873121965577085
+    },
+    {
+      "Crop": "Cashewnut",
+      "Samples": 20,
+      "MAE": 0.7021873746188587,
+      "RMSE": 0.9522697288886561,
+      "R2": -1.4914234430465076
+    },
+    {
+      "Crop": "Linseed",
+      "Samples": 67,
+      "MAE": 0.22964165465515105,
+      "RMSE": 0.3041295897692065,
+      "R2": -1.510317547713167
+    },
+    {
+      "Crop": "Niger seed",
+      "Samples": 33,
+      "MAE": 0.23553404281294688,
+      "RMSE": 0.30383003503272626,
+      "R2": -1.5216341379560587
+    },
+    {
+      "Crop": "Moth",
+      "Samples": 21,
+      "MAE": 0.2899474379618958,
+      "RMSE": 0.36115232425010163,
+      "R2": -2.3671327222678737
+    },
+    {
+      "Crop": "Other Summer Pulses",
+      "Samples": 3,
+      "MAE": 0.38857916006014,
+      "RMSE": 0.4106450483893271,
+      "R2": -5.711303396611505
+    }
+  ],
+  "best_crop": "Tapioca",
+  "worst_crop": "Other Summer Pulses",
+  "num_crops": 55,
+  "ablation_best_r2": 0.93643286767111,
+  "ablation_gain": 0.332963901879313,
+  "cv_r2_mean": 0.931734,
+  "cv_r2_std": 0.007169,
+  "cv_rmse_mean": 2.793159,
+  "cv_mae_mean": 1.027093,
+  "cv_fold_scores": [
+    {
+      "Fold": 1,
+      "R2": 0.936652,
+      "RMSE": 2.684066,
+      "MAE": 1.049333
+    },
+    {
+      "Fold": 2,
+      "R2": 0.930336,
+      "RMSE": 2.851865,
+      "MAE": 1.010633
+    },
+    {
+      "Fold": 3,
+      "R2": 0.940973,
+      "RMSE": 2.646355,
+      "MAE": 1.009962
+    },
+    {
+      "Fold": 4,
+      "R2": 0.922834,
+      "RMSE": 2.931095,
+      "MAE": 1.043895
+    },
+    {
+      "Fold": 5,
+      "R2": 0.927877,
+      "RMSE": 2.852414,
+      "MAE": 1.021641
+    }
+  ],
+  "significance_test": {
+    "model_a": "Random Forest",
+    "model_b": "XGBoost",
+    "model_a_cv_r2_mean": 0.92774,
+    "model_b_cv_r2_mean": 0.931735,
+    "model_a_fold_scores": [
+      0.935712,
+      0.926177,
+      0.937255,
+      0.91792,
+      0.921637
+    ],
+    "model_b_fold_scores": [
+      0.936652,
+      0.930336,
+      0.940973,
+      0.922834,
+      0.927877
+    ],
+    "t_statistic": -4.563195,
+    "p_value": 0.010314,
+    "significant": true,
+    "alpha": 0.05,
+    "interpretation": "Random Forest (R\u00b2=0.9277) vs XGBoost (R\u00b2=0.9317): difference is statistically significant (t=-4.5632, p=0.0103, \u03b1=0.05)."
+  },
+  "loyo_mean_r2": 0.931806,
+  "loyo_mean_rmse": 2.696943,
+  "loyo_mean_mae": 1.00019,
+  "loyo_year_results": [
+    {
+      "Year": 1997,
+      "R2": 0.722893,
+      "RMSE": 6.163328,
+      "MAE": 1.213443,
+      "Samples": 406
+    },
+    {
+      "Year": 1998,
+      "R2": 0.953994,
+      "RMSE": 2.298143,
+      "MAE": 1.024867,
+      "Samples": 640
+    },
+    {
+      "Year": 1999,
+      "R2": 0.95835,
+      "RMSE": 2.349474,
+      "MAE": 0.930177,
+      "Samples": 643
+    },
+    {
+      "Year": 2000,
+      "R2": 0.954531,
+      "RMSE": 2.230186,
+      "MAE": 0.921626,
+      "Samples": 764
+    },
+    {
+      "Year": 2001,
+      "R2": 0.966496,
+      "RMSE": 2.085552,
+      "MAE": 0.832463,
+      "Samples": 743
+    },
+    {
+      "Year": 2002,
+      "R2": 0.958227,
+      "RMSE": 2.143305,
+      "MAE": 0.923502,
+      "Samples": 807
+    },
+    {
+      "Year": 2003,
+      "R2": 0.939588,
+      "RMSE": 2.59411,
+      "MAE": 1.018009,
+      "Samples": 793
+    },
+    {
+      "Year": 2004,
+      "R2": 0.970391,
+      "RMSE": 1.70543,
+      "MAE": 0.798097,
+      "Samples": 779
+    },
+    {
+      "Year": 2005,
+      "R2": 0.955327,
+      "RMSE": 2.264484,
+      "MAE": 0.92608,
+      "Samples": 802
+    },
+    {
+      "Year": 2006,
+      "R2": 0.946146,
+      "RMSE": 2.311579,
+      "MAE": 0.894071,
+      "Samples": 814
+    },
+    {
+      "Year": 2007,
+      "R2": 0.942206,
+      "RMSE": 2.583834,
+      "MAE": 0.964881,
+      "Samples": 820
+    },
+    {
+      "Year": 2008,
+      "R2": 0.959054,
+      "RMSE": 2.135699,
+      "MAE": 0.902876,
+      "Samples": 837
+    },
+    {
+      "Year": 2009,
+      "R2": 0.875397,
+      "RMSE": 4.046636,
+      "MAE": 1.114259,
+      "Samples": 857
+    },
+    {
+      "Year": 2010,
+      "R2": 0.934799,
+      "RMSE": 2.468931,
+      "MAE": 0.918047,
+      "Samples": 850
+    },
+    {
+      "Year": 2011,
+      "R2": 0.926446,
+      "RMSE": 2.549731,
+      "MAE": 0.949623,
+      "Samples": 896
+    },
+    {
+      "Year": 2012,
+      "R2": 0.881109,
+      "RMSE": 3.717644,
+      "MAE": 1.111797,
+      "Samples": 887
+    },
+    {
+      "Year": 2013,
+      "R2": 0.936939,
+      "RMSE": 2.857562,
+      "MAE": 1.110417,
+      "Samples": 966
+    },
+    {
+      "Year": 2014,
+      "R2": 0.957161,
+      "RMSE": 2.216878,
+      "MAE": 1.004428,
+      "Samples": 954
+    },
+    {
+      "Year": 2015,
+      "R2": 0.948963,
+      "RMSE": 2.394008,
+      "MAE": 1.047379,
+      "Samples": 989
+    },
+    {
+      "Year": 2016,
+      "R2": 0.942185,
+      "RMSE": 2.515412,
+      "MAE": 1.077972,
+      "Samples": 1027
+    },
+    {
+      "Year": 2017,
+      "R2": 0.960202,
+      "RMSE": 2.157208,
+      "MAE": 0.987726,
+      "Samples": 1059
+    },
+    {
+      "Year": 2018,
+      "R2": 0.900361,
+      "RMSE": 3.519417,
+      "MAE": 1.199213,
+      "Samples": 1052
+    },
+    {
+      "Year": 2019,
+      "R2": 0.94078,
+      "RMSE": 2.721145,
+      "MAE": 1.133423,
+      "Samples": 1047
+    }
+  ],
+  "loro_mean_r2": -0.602383,
+  "loro_mean_rmse": 5.691467,
+  "loro_mean_mae": 2.092297,
+  "loro_state_results": [
+    {
+      "State": "Andhra Pradesh",
+      "R2": 0.805893,
+      "RMSE": 5.384449,
+      "MAE": 2.007252,
+      "Samples": 1242
+    },
+    {
+      "State": "Arunachal Pradesh",
+      "R2": -1.32793,
+      "RMSE": 7.538657,
+      "MAE": 2.755275,
+      "Samples": 292
+    },
+    {
+      "State": "Assam",
+      "R2": 0.863071,
+      "RMSE": 2.610158,
+      "MAE": 1.52881,
+      "Samples": 708
+    },
+    {
+      "State": "Bihar",
+      "R2": 0.866755,
+      "RMSE": 2.906303,
+      "MAE": 1.226042,
+      "Samples": 895
+    },
+    {
+      "State": "Chhattisgarh",
+      "R2": -2.025607,
+      "RMSE": 9.649169,
+      "MAE": 3.044381,
+      "Samples": 915
+    },
+    {
+      "State": "Delhi",
+      "R2": 0.864294,
+      "RMSE": 6.900289,
+      "MAE": 3.124166,
+      "Samples": 200
+    },
+    {
+      "State": "Goa",
+      "R2": 0.811649,
+      "RMSE": 6.439437,
+      "MAE": 2.478365,
+      "Samples": 229
+    },
+    {
+      "State": "Gujarat",
+      "R2": 0.738933,
+      "RMSE": 8.151185,
+      "MAE": 2.853531,
+      "Samples": 815
+    },
+    {
+      "State": "Haryana",
+      "R2": 0.795822,
+      "RMSE": 5.333247,
+      "MAE": 2.326029,
+      "Samples": 630
+    },
+    {
+      "State": "Himachal Pradesh",
+      "R2": -6.005313,
+      "RMSE": 8.456538,
+      "MAE": 2.358516,
+      "Samples": 616
+    },
+    {
+      "State": "Jammu and Kashmir",
+      "R2": -15.369634,
+      "RMSE": 8.862989,
+      "MAE": 2.650115,
+      "Samples": 631
+    },
+    {
+      "State": "Jharkhand",
+      "R2": 0.203378,
+      "RMSE": 7.340222,
+      "MAE": 2.310857,
+      "Samples": 269
+    },
+    {
+      "State": "Karnataka",
+      "R2": 0.766377,
+      "RMSE": 5.431982,
+      "MAE": 1.903529,
+      "Samples": 1409
+    },
+    {
+      "State": "Kerala",
+      "R2": 0.5982,
+      "RMSE": 9.38166,
+      "MAE": 3.908441,
+      "Samples": 511
+    },
+    {
+      "State": "Madhya Pradesh",
+      "R2": 0.531415,
+      "RMSE": 5.330452,
+      "MAE": 1.979901,
+      "Samples": 839
+    },
+    {
+      "State": "Maharashtra",
+      "R2": 0.820168,
+      "RMSE": 5.305008,
+      "MAE": 1.167006,
+      "Samples": 762
+    },
+    {
+      "State": "Manipur",
+      "R2": 0.702005,
+      "RMSE": 5.581034,
+      "MAE": 2.744939,
+      "Samples": 444
+    },
+    {
+      "State": "Meghalaya",
+      "R2": -8.232851,
+      "RMSE": 8.623843,
+      "MAE": 2.767328,
+      "Samples": 649
+    },
+    {
+      "State": "Mizoram",
+      "R2": -2.702464,
+      "RMSE": 7.865969,
+      "MAE": 2.759373,
+      "Samples": 416
+    },
+    {
+      "State": "Nagaland",
+      "R2": 0.737014,
+      "RMSE": 4.001117,
+      "MAE": 1.350714,
+      "Samples": 689
+    },
+    {
+      "State": "Odisha",
+      "R2": 0.96336,
+      "RMSE": 1.888668,
+      "MAE": 1.016238,
+      "Samples": 760
+    },
+    {
+      "State": "Puducherry",
+      "R2": 0.763518,
+      "RMSE": 5.701237,
+      "MAE": 2.346095,
+      "Samples": 638
+    },
+    {
+      "State": "Punjab",
+      "R2": 0.926891,
+      "RMSE": 3.896204,
+      "MAE": 1.338645,
+      "Samples": 397
+    },
+    {
+      "State": "Sikkim",
+      "R2": -0.275601,
+      "RMSE": 0.92208,
+      "MAE": 0.555731,
+      "Samples": 226
+    },
+    {
+      "State": "Tamil Nadu",
+      "R2": 0.724234,
+      "RMSE": 7.750949,
+      "MAE": 3.18302,
+      "Samples": 796
+    },
+    {
+      "State": "Telangana",
+      "R2": 0.851879,
+      "RMSE": 4.930345,
+      "MAE": 1.903942,
+      "Samples": 393
+    },
+    {
+      "State": "Tripura",
+      "R2": 0.919773,
+      "RMSE": 3.128734,
+      "MAE": 1.111504,
+      "Samples": 441
+    },
+    {
+      "State": "Uttar Pradesh",
+      "R2": 0.936914,
+      "RMSE": 2.823609,
+      "MAE": 1.286245,
+      "Samples": 824
+    },
+    {
+      "State": "Uttarakhand",
+      "R2": 0.940154,
+      "RMSE": 2.533054,
+      "MAE": 0.982249,
+      "Samples": 727
+    },
+    {
+      "State": "West Bengal",
+      "R2": 0.736219,
+      "RMSE": 6.075418,
+      "MAE": 1.800665,
+      "Samples": 1069
+    }
+  ],
+  "generalization_report": {
+    "kfold_cv_r2": 0.931734,
+    "kfold_cv_r2_std": 0.007169,
+    "kfold_cv_rmse": 2.793159,
+    "kfold_cv_mae": 1.027093,
+    "loyo_mean_r2": 0.931806,
+    "loyo_mean_rmse": 2.696943,
+    "loyo_mean_mae": 1.00019,
+    "loro_mean_r2": -0.602383,
+    "loro_mean_rmse": 5.691467,
+    "loro_mean_mae": 2.092297,
+    "drop_vs_loyo": -7.2e-05,
+    "drop_vs_loro": 1.534117,
+    "interpretation": "KFold CV R\u00b2=0.9317 \u00b1 0.0072. LOYO R\u00b2=0.9318 (drop=-0.0001). LORO R\u00b2=-0.6024 (drop=1.5341). A smaller drop indicates stronger temporal/spatial generalization."
+  },
+  "shap_stability_summary": {
+    "stable_features": [
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Crop_Tapioca",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "changed_features": [
+      "cat__Crop_Dry chillies",
+      "cat__Crop_Ginger",
+      "cat__Crop_Jute",
+      "cat__Crop_Mesta",
+      "cat__Season_Whole Year",
+      "cat__State_Himachal Pradesh",
+      "cat__State_Kerala",
+      "cat__State_Meghalaya",
+      "cat__State_Mizoram",
+      "cat__State_Puducherry"
+    ],
+    "consistency_score": 0.75,
+    "kfold_top20": [
+      "cat__Crop_Ginger",
+      "cat__Crop_Jute",
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Crop_Tapioca",
+      "cat__Season_Whole Year",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Himachal Pradesh",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Meghalaya",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "loyo_top20": [
+      "cat__Crop_Ginger",
+      "cat__Crop_Mesta",
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Crop_Tapioca",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Himachal Pradesh",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Kerala",
+      "cat__State_Mizoram",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "loro_top20": [
+      "cat__Crop_Dry chillies",
+      "cat__Crop_Jute",
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Crop_Tapioca",
+      "cat__Season_Whole Year",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Mizoram",
+      "cat__State_Puducherry",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "sources_used": [
+      "kfold",
+      "loyo",
+      "loro"
+    ],
+    "interpretation": "15 of 20 features are consistently important across 3 validation scheme(s) (consistency score = 0.75). 10 features show ranking variability."
+  }
+}

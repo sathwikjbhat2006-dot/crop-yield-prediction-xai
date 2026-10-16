@@ -1,0 +1,15 @@
+{
+  "kfold_cv_r2": 0.931734,
+  "kfold_cv_r2_std": 0.007169,
+  "kfold_cv_rmse": 2.793159,
+  "kfold_cv_mae": 1.027093,
+  "loyo_mean_r2": 0.931806,
+  "loyo_mean_rmse": 2.696943,
+  "loyo_mean_mae": 1.00019,
+  "loro_mean_r2": -0.602383,
+  "loro_mean_rmse": 5.691467,
+  "loro_mean_mae": 2.092297,
+  "drop_vs_loyo": -7.2e-05,
+  "drop_vs_loro": 1.534117,
+  "interpretation": "KFold CV R\u00b2=0.9317 \u00b1 0.0072. LOYO R\u00b2=0.9318 (drop=-0.0001). LORO R\u00b2=-0.6024 (drop=1.5341). A smaller drop indicates stronger temporal/spatial generalization."
+}

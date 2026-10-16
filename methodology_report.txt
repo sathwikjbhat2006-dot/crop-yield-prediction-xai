@@ -1,0 +1,1654 @@
+
+======================================================================
+1. DATASET SUMMARY (dataset/training_data.csv)
+======================================================================
+Rows: 19432
+Columns: 14
+Column names: ['Crop_Year', 'Crop', 'State', 'Season', 'Fertilizer_per_ha', 'Annual_Rainfall', 'N', 'P', 'K', 'temperature', 'humidity', 'solar_radiation', 'wind_speed', 'Yield']
+
+Dtypes:
+Crop_Year              int64
+Crop                     str
+State                    str
+Season                   str
+Fertilizer_per_ha    float64
+Annual_Rainfall      float64
+N                      int64
+P                      int64
+K                      int64
+temperature          float64
+humidity             float64
+solar_radiation      float64
+wind_speed           float64
+Yield                float64
+dtype: object
+
+Missing values per column:
+Crop_Year            0
+Crop                 0
+State                0
+Season               0
+Fertilizer_per_ha    0
+Annual_Rainfall      0
+N                    0
+P                    0
+K                    0
+temperature          0
+humidity             0
+solar_radiation      0
+wind_speed           0
+Yield                0
+dtype: int64
+
+Unique crops ('Crop'): 55
+Crop list: ['Arecanut', 'Arhar/Tur', 'Bajra', 'Banana', 'Barley', 'Black pepper', 'Cardamom', 'Cashewnut', 'Castor seed', 'Coconut', 'Coriander', 'Cotton(lint)', 'Cowpea(Lobia)', 'Dry chillies', 'Garlic', 'Ginger', 'Gram', 'Groundnut', 'Guar seed', 'Horse-gram', 'Jowar', 'Jute', 'Khesari', 'Linseed', 'Maize', 'Masoor', 'Mesta', 'Moong(Green Gram)', 'Moth', 'Niger seed', 'Oilseeds total', 'Onion', 'Other  Rabi pulses', 'Other Cereals', 'Other Kharif pulses', 'Other Summer Pulses', 'Peas & beans (Pulses)', 'Potato', 'Ragi', 'Rapeseed &Mustard', 'Rice', 'Safflower', 'Sannhamp', 'Sesamum', 'Small millets', 'Soyabean', 'Sugarcane', 'Sunflower', 'Sweet potato', 'Tapioca', 'Tobacco', 'Turmeric', 'Urad', 'Wheat', 'other oilseeds']
+
+Unique states ('State'): 30
+
+Year/season range ('Crop_Year'): 1997 to 2019
+
+Full describe():
+           Crop_Year   Crop      State  Season  ...      humidity  solar_radiation    wind_speed         Yield
+count   19432.000000  19432      19432   19432  ...  19432.000000     19432.000000  19432.000000  19432.000000
+unique           NaN     55         30       6  ...           NaN              NaN           NaN           NaN
+top              NaN   Rice  Karnataka  Kharif  ...           NaN              NaN           NaN           NaN
+freq             NaN   1190       1409    8188  ...           NaN              NaN           NaN           NaN
+mean     2009.096696    NaN        NaN     NaN  ...     62.626166        17.256742      2.669983      4.105561
+std         6.482866    NaN        NaN     NaN  ...     11.078283         3.596883      0.920141     10.708031
+min      1997.000000    NaN        NaN     NaN  ...     20.000000         3.279637      0.500000      0.000000
+25%      2004.000000    NaN        NaN     NaN  ...     55.088850        14.824889      2.043438      0.595455
+50%      2010.000000    NaN        NaN     NaN  ...     62.492902        17.298968      2.651365      1.016319
+75%      2015.000000    NaN        NaN     NaN  ...     70.120581        19.754110      3.280575      2.303542
+max      2019.000000    NaN        NaN     NaN  ...     99.000000        30.000000      7.028347    104.220667
+
+[11 rows x 14 columns]
+
+======================================================================
+1b. NPK LOOKUP TABLE (dataset/crop_npk_lookup.csv)
+======================================================================
+--- dataset/crop_npk_lookup.csv  (shape: 56 rows x 4 cols) ---
+                 Crop   N  P   K
+                 Rice  80 40  40
+                Wheat 120 60  40
+                Maize 100 50  40
+            Sugarcane 150 60 100
+         Cotton(lint) 120 60  60
+            Groundnut  25 50  75
+             Soyabean  20 60  40
+               Potato 120 60 120
+                Onion 100 50 100
+               Banana 200 60 300
+                 Gram  20 60  20
+            Arhar/Tur  20 60  20
+                Bajra  80 40  40
+                Jowar  80 40  40
+                 Ragi  50 25  25
+               Barley  80 40  30
+    Rapeseed &Mustard  80 40  40
+            Sunflower  60 60  60
+             Turmeric 100 50 100
+               Ginger  75 50  75
+               Garlic 100 60  80
+              Linseed  40 20  20
+          Castor seed  40 20  20
+              Sesamum  30 15  15
+                 Jute  60 30  30
+              Coconut  50 30 200
+              Coconut  50 30 200
+             Arecanut  50 30 100
+            Cashewnut  30 20 150
+         Black pepper  30 20 100
+             Cardamom  30 20  80
+    Moong(Green Gram)  20 60  20
+                 Urad  20 60  20
+        Cowpea(Lobia)  20 60  20
+           Horse-gram  15 40  20
+               Masoor  20 40  20
+              Khesari  20 40  20
+                 Moth  15 30  20
+         Dry chillies 100 50 100
+            Coriander  50 25  25
+              Tobacco  60 30 100
+              Tapioca 100 40 150
+         Sweet potato  80 40 100
+            Safflower  40 20  20
+           Niger seed  20 10  10
+            Guar seed  20 40  20
+        Small millets  40 20  20
+        Other Cereals  60 30  30
+       Oilseeds total  40 30  30
+       other oilseeds  40 30  30
+             Sannhamp  40 20  20
+                Mesta  40 20  20
+Peas & beans (Pulses)  20 50  20
+   Other  Rabi pulses  20 50  20
+  Other Kharif pulses  20 50  20
+  Other Summer Pulses  20 50  20
+
+======================================================================
+2. TRAINING SCRIPT DETAILS (train_model.py)
+======================================================================
+Target variable assignment line(s):
+y = df["Yield"]
+
+Feature matrix (X) assignment line(s):
+
+X = df[FEATURE_COLS]
+
+train_test_split() call(s):
+train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+
+Cross-validation call(s):
+KFold(
+        n_splits=5,
+        shuffle=True,
+        random_state=42
+    )
+cross_val_score(
+        mdl,
+        X,
+        y,
+        cv=kf,
+        scoring="r2",
+        n_jobs=1
+    )
+KFold(n_splits=5, shuffle=True, random_state=42)
+
+Model instantiation(s):
+RandomForestRegressor
+XGBRegressor
+LinearRegression
+DecisionTreeRegressor
+
+======================================================================
+3. MODEL METADATA (models/model_metadata.json)
+======================================================================
+--- models/model_metadata.json ---
+{
+  "training_timestamp": "2026-09-02T18:30:11.362318",
+  "selected_model": "XGBoost",
+  "selection_metric": "CV_R2",
+  "selected_score": 0.931735,
+  "training_rows": 15545,
+  "feature_count": 101,
+  "model_name": "XGBoost",
+  "is_tree_model": true,
+  "r2_score": 0.936433,
+  "rmse": 2.688705,
+  "mae": 1.053981,
+  "cv_r2": 0.931735,
+  "mape": 38.921889,
+  "smape": 38.921889,
+  "feature_names": [
+    "Crop_Year",
+    "Fertilizer_per_ha",
+    "Annual_Rainfall",
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "solar_radiation",
+    "wind_speed",
+    "Crop",
+    "State",
+    "Season"
+  ],
+  "numeric_features": [
+    "Crop_Year",
+    "Fertilizer_per_ha",
+    "Annual_Rainfall",
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "solar_radiation",
+    "wind_speed"
+  ],
+  "categorical_features": [
+    "Crop",
+    "State",
+    "Season"
+  ],
+  "all_models": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 2.6665077598295577,
+      "RMSE": 6.152811070672939,
+      "R2": 0.6671156629464982,
+      "CV_R2": 0.7047127071120342,
+      "SMAPE": 94.84514792157037
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 0.876107508880185,
+      "RMSE": 3.001301842961915,
+      "R2": 0.9207926376266814,
+      "CV_R2": 0.8993965421120167,
+      "SMAPE": 29.245212444548873
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 0.9250651612918056,
+      "RMSE": 2.6867214011577993,
+      "R2": 0.9365266425629118,
+      "CV_R2": 0.9277401761440054,
+      "SMAPE": 33.1475334656646
+    },
+    {
+      "Model": "XGBoost",
+      "MAE": 1.0539811194225488,
+      "RMSE": 2.6887053360838453,
+      "R2": 0.93643286767111,
+      "CV_R2": 0.931734537310198,
+      "SMAPE": 38.921888746702244
+    }
+  ],
+  "cv_fold_scores": [
+    0.936652,
+    0.930336,
+    0.940973,
+    0.922834,
+    0.927877
+  ],
+  "cv_r2_std": 0.007169,
+  "cv_rmse_mean": 2.793159,
+  "cv_mae_mean": 1.027093,
+  "significance_test": {
+    "model_a": "Random Forest",
+    "model_b": "XGBoost",
+    "model_a_cv_r2_mean": 0.92774,
+    "model_b_cv_r2_mean": 0.931735,
+    "model_a_fold_scores": [
+      0.935712,
+      0.926177,
+      0.937255,
+      0.91792,
+      0.921637
+    ],
+    "model_b_fold_scores": [
+      0.936652,
+      0.930336,
+      0.940973,
+      0.922834,
+      0.927877
+    ],
+    "t_statistic": -4.563195,
+    "p_value": 0.010314,
+    "significant": true,
+    "alpha": 0.05,
+    "interpretation": "Random Forest (R\u00b2=0.9277) vs XGBoost (R\u00b2=0.9317): difference is statistically significant (t=-4.5632, p=0.0103, \u03b1=0.05)."
+  },
+  "loyo_mean_r2": 0.931806,
+  "loro_mean_r2": -0.602383,
+  "generalization_report": {
+    "kfold_cv_r2": 0.931734,
+    "kfold_cv_r2_std": 0.007169,
+    "kfold_cv_rmse": 2.793159,
+    "kfold_cv_mae": 1.027093,
+    "loyo_mean_r2": 0.931806,
+    "loyo_mean_rmse": 2.696943,
+    "loyo_mean_mae": 1.00019,
+    "loro_mean_r2": -0.602383,
+    "loro_mean_rmse": 5.691467,
+    "loro_mean_mae": 2.092297,
+    "drop_vs_loyo": -7.2e-05,
+    "drop_vs_loro": 1.534117,
+    "interpretation": "KFold CV R\u00b2=0.9317 \u00b1 0.0072. LOYO R\u00b2=0.9318 (drop=-0.0001). LORO R\u00b2=-0.6024 (drop=1.5341). A smaller drop indicates stronger temporal/spatial generalization."
+  }
+}
+
+======================================================================
+4. RESULTS TABLES (results/*.csv)
+======================================================================
+--- results/model_comparison.csv  (shape: 4 rows x 6 cols) ---
+            Model      MAE     RMSE       R2    CV_R2     SMAPE
+Linear Regression 2.666508 6.152811 0.667116 0.704713 94.845148
+    Decision Tree 0.876108 3.001302 0.920793 0.899397 29.245212
+    Random Forest 0.925065 2.686721 0.936527 0.927740 33.147533
+          XGBoost 1.053981 2.688705 0.936433 0.931735 38.921889
+
+--- results/feature_importance.csv  (shape: 101 rows x 2 cols) ---
+                        Feature  Importance
+                         num__N    0.186692
+        cat__State_Chhattisgarh    0.059634
+    cat__State_Himachal Pradesh    0.058294
+   cat__State_Jammu and Kashmir    0.048977
+             cat__State_Mizoram    0.039397
+           cat__State_Meghalaya    0.038903
+   cat__State_Arunachal Pradesh    0.032672
+             cat__Crop_Turmeric    0.032496
+            cat__Crop_Sugarcane    0.031223
+             cat__State_Gujarat    0.029787
+                         num__K    0.025434
+         cat__State_West Bengal    0.024410
+                cat__Crop_Bajra    0.023986
+      cat__State_Madhya Pradesh    0.020650
+         cat__Crop_Dry chillies    0.020509
+           cat__State_Karnataka    0.018711
+           cat__State_Jharkhand    0.017017
+              cat__State_Kerala    0.016622
+          cat__State_Tamil Nadu    0.016185
+                cat__Crop_Onion    0.016111
+           num__Annual_Rainfall    0.015902
+         cat__State_Maharashtra    0.013642
+      cat__State_Andhra Pradesh    0.011861
+             cat__Season_Winter    0.011415
+         cat__Crop_Sweet potato    0.011153
+             cat__State_Tripura    0.008797
+       cat__State_Uttar Pradesh    0.008185
+            cat__State_Nagaland    0.008153
+          cat__State_Puducherry    0.007895
+           cat__State_Telangana    0.007723
+                 cat__Crop_Jute    0.007428
+         cat__Crop_Cotton(lint)    0.007020
+             cat__Season_Kharif    0.006820
+               cat__Crop_Ginger    0.006777
+                cat__Crop_Mesta    0.006428
+             cat__State_Manipur    0.005950
+              cat__Crop_Tapioca    0.005877
+             cat__State_Haryana    0.005263
+               cat__Crop_Garlic    0.005108
+         cat__Season_Whole Year    0.005030
+               cat__State_Delhi    0.004630
+             cat__Season_Summer    0.004243
+         cat__State_Uttarakhand    0.004150
+           num__solar_radiation    0.003847
+               cat__State_Bihar    0.003811
+               cat__Season_Rabi    0.003422
+                 cat__State_Goa    0.003388
+                         num__P    0.003385
+              cat__Crop_Tobacco    0.003351
+                 num__Crop_Year    0.003221
+              cat__State_Punjab    0.002866
+              cat__Crop_Sesamum    0.002629
+       cat__Crop_other oilseeds    0.002501
+               cat__Crop_Potato    0.002372
+                  num__humidity    0.002371
+    cat__Crop_Rapeseed &Mustard    0.002356
+               cat__State_Assam    0.002143
+                cat__Crop_Maize    0.001972
+                num__wind_speed    0.001733
+            cat__Crop_Arhar/Tur    0.001635
+               num__temperature    0.001535
+         num__Fertilizer_per_ha    0.001395
+             cat__Crop_Arecanut    0.001384
+                cat__Crop_Jowar    0.001303
+              cat__State_Odisha    0.001089
+cat__Crop_Peas & beans (Pulses)    0.000970
+            cat__Crop_Cashewnut    0.000954
+            cat__Crop_Guar seed    0.000885
+             cat__Crop_Sannhamp    0.000877
+            cat__Crop_Coriander    0.000593
+                 cat__Crop_Rice    0.000584
+             cat__Crop_Cardamom    0.000554
+          cat__Crop_Castor seed    0.000516
+            cat__Crop_Sunflower    0.000505
+                 cat__Crop_Ragi    0.000425
+                cat__Crop_Wheat    0.000332
+    cat__Crop_Moong(Green Gram)    0.000314
+             cat__Season_Autumn    0.000294
+        cat__Crop_Other Cereals    0.000267
+               cat__Crop_Barley    0.000239
+                 cat__Crop_Urad    0.000219
+             cat__Crop_Soyabean    0.000217
+       cat__Crop_Oilseeds total    0.000152
+   cat__Crop_Other  Rabi pulses    0.000138
+              cat__State_Sikkim    0.000095
+               cat__Crop_Masoor    0.000000
+              cat__Crop_Linseed    0.000000
+           cat__Crop_Horse-gram    0.000000
+              cat__Crop_Khesari    0.000000
+                 cat__Crop_Gram    0.000000
+        cat__Crop_Cowpea(Lobia)    0.000000
+            cat__Crop_Groundnut    0.000000
+              cat__Crop_Coconut    0.000000
+         cat__Crop_Black pepper    0.000000
+               cat__Crop_Banana    0.000000
+        cat__Crop_Small millets    0.000000
+           cat__Crop_Niger seed    0.000000
+  cat__Crop_Other Kharif pulses    0.000000
+            cat__Crop_Safflower    0.000000
+  cat__Crop_Other Summer Pulses    0.000000
+                 cat__Crop_Moth    0.000000
+
+--- results/feature_group_importance.csv  (shape: 4 rows x 2 cols) ---
+   Group  Importance
+Location    0.520898
+    Soil    0.216906
+    Crop    0.202361
+ Weather    0.025389
+
+--- results/per_crop_metrics.csv  (shape: 55 rows x 5 cols) ---
+                 Crop  Samples      MAE      RMSE        R2
+              Tapioca       35 2.871515  4.134661  0.879836
+            Sugarcane      124 7.617231 11.290994  0.858921
+               Banana       44 4.851593  6.904395  0.841396
+                Bajra      122 0.751887  1.893358  0.835308
+                Onion       86 3.051258  4.023048  0.733731
+                 Jute       37 2.225557  2.745751  0.705769
+               Potato      130 2.570637  3.597314  0.695478
+               Garlic       57 1.629167  2.454583  0.611706
+                Wheat      112 0.528145  0.703135  0.595558
+               Ginger       75 3.028957  4.390219  0.577084
+               Barley       69 0.552758  0.628026  0.552319
+                Maize      195 0.858692  1.650947  0.536256
+    Rapeseed &Mustard       93 0.283160  0.486457  0.515328
+         Dry chillies       83 1.046555  1.477216  0.486725
+                 Ragi      102 0.354290  0.543368  0.450496
+                 Rice      249 0.427636  0.604586  0.441130
+             Turmeric       72 1.662822  2.480895  0.430491
+Peas & beans (Pulses)       79 0.486955  0.982339  0.426473
+             Arecanut       31 1.055077  1.932699  0.423748
+         Sweet potato       52 2.845702  3.602552  0.398980
+                Mesta       42 2.239040  3.012802  0.385420
+   Other  Rabi pulses       69 0.271385  0.466781  0.313492
+       other oilseeds       33 1.564745  3.924655  0.304736
+                Jowar      108 0.362819  0.465900  0.276985
+            Sunflower       73 0.316287  0.419524  0.234017
+             Sannhamp       27 1.296086  1.856684  0.214949
+              Tobacco       68 1.201016  1.720292  0.207875
+  Other Kharif pulses       70 0.226942  0.280585  0.170693
+                 Gram       85 0.336868  0.884920  0.166125
+            Arhar/Tur       93 0.242095  0.336596  0.057686
+         Cotton(lint)       97 0.727716  0.992988  0.053642
+            Groundnut      165 0.475036  0.660346  0.015102
+          Castor seed       57 0.251276  0.319663 -0.042179
+            Coriander       37 0.341782  0.407077 -0.076425
+            Safflower       27 0.142070  0.222779 -0.089479
+             Cardamom       12 0.540914  0.815422 -0.117050
+        Cowpea(Lobia)       23 0.432135  0.567140 -0.122204
+        Small millets       97 0.249014  0.314531 -0.137297
+               Masoor       57 0.173342  0.306332 -0.277244
+       Oilseeds total        6 2.294271  3.870003 -0.386585
+             Soyabean       70 0.395293  0.458148 -0.454320
+                 Urad      145 0.227712  0.290727 -0.514477
+    Moong(Green Gram)      141 0.217157  0.316200 -0.591917
+         Black pepper       32 0.851196  1.051428 -0.787718
+           Horse-gram       70 0.217749  0.277610 -0.814047
+              Sesamum      136 0.253457  0.329982 -0.967964
+            Guar seed       11 0.160464  0.216634 -1.115045
+              Khesari       18 0.289963  0.417650 -1.163849
+        Other Cereals       26 0.414727  0.512140 -1.487312
+            Cashewnut       20 0.702187  0.952270 -1.491423
+              Linseed       67 0.229642  0.304130 -1.510318
+           Niger seed       33 0.235534  0.303830 -1.521634
+                 Moth       21 0.289947  0.361152 -2.367133
+  Other Summer Pulses        3 0.388579  0.410645 -5.711303
+              Coconut        1 3.322193  3.322193       NaN
+
+--- results/ablation_study.csv  (shape: 4 rows x 4 cols) ---
+             Features       R2     RMSE      MAE
+             NPK Only 0.603469 6.715301 2.453996
+        NPK + Weather 0.659009 6.227275 2.137349
+NPK + Weather + State 0.901513 3.346704 1.414480
+     Full Feature Set 0.936433 2.688705 1.053981
+
+--- results/cv_fold_results.csv  (shape: 5 rows x 4 cols) ---
+ Fold       R2     RMSE      MAE
+    1 0.936652 2.684066 1.049333
+    2 0.930336 2.851865 1.010633
+    3 0.940973 2.646355 1.009962
+    4 0.922834 2.931095 1.043895
+    5 0.927877 2.852414 1.021641
+
+--- results/loyo_results.csv  (shape: 23 rows x 5 cols) ---
+ Year       R2     RMSE      MAE  Samples
+ 1997 0.722893 6.163328 1.213443      406
+ 1998 0.953994 2.298143 1.024867      640
+ 1999 0.958350 2.349474 0.930177      643
+ 2000 0.954531 2.230186 0.921626      764
+ 2001 0.966496 2.085552 0.832463      743
+ 2002 0.958227 2.143305 0.923502      807
+ 2003 0.939588 2.594110 1.018009      793
+ 2004 0.970391 1.705430 0.798097      779
+ 2005 0.955327 2.264484 0.926080      802
+ 2006 0.946146 2.311579 0.894071      814
+ 2007 0.942206 2.583834 0.964881      820
+ 2008 0.959054 2.135699 0.902876      837
+ 2009 0.875397 4.046636 1.114259      857
+ 2010 0.934799 2.468931 0.918047      850
+ 2011 0.926446 2.549731 0.949623      896
+ 2012 0.881109 3.717644 1.111797      887
+ 2013 0.936939 2.857562 1.110417      966
+ 2014 0.957161 2.216878 1.004428      954
+ 2015 0.948963 2.394008 1.047379      989
+ 2016 0.942185 2.515412 1.077972     1027
+ 2017 0.960202 2.157208 0.987726     1059
+ 2018 0.900361 3.519417 1.199213     1052
+ 2019 0.940780 2.721145 1.133423     1047
+
+--- results/loro_results.csv  (shape: 30 rows x 5 cols) ---
+            State         R2     RMSE      MAE  Samples
+   Andhra Pradesh   0.805893 5.384449 2.007252     1242
+Arunachal Pradesh  -1.327930 7.538657 2.755275      292
+            Assam   0.863071 2.610158 1.528810      708
+            Bihar   0.866755 2.906303 1.226042      895
+     Chhattisgarh  -2.025607 9.649169 3.044381      915
+            Delhi   0.864294 6.900289 3.124166      200
+              Goa   0.811649 6.439437 2.478365      229
+          Gujarat   0.738933 8.151185 2.853531      815
+          Haryana   0.795822 5.333247 2.326029      630
+ Himachal Pradesh  -6.005313 8.456538 2.358516      616
+Jammu and Kashmir -15.369634 8.862989 2.650115      631
+        Jharkhand   0.203378 7.340222 2.310857      269
+        Karnataka   0.766377 5.431982 1.903529     1409
+           Kerala   0.598200 9.381660 3.908441      511
+   Madhya Pradesh   0.531415 5.330452 1.979901      839
+      Maharashtra   0.820168 5.305008 1.167006      762
+          Manipur   0.702005 5.581034 2.744939      444
+        Meghalaya  -8.232851 8.623843 2.767328      649
+          Mizoram  -2.702464 7.865969 2.759373      416
+         Nagaland   0.737014 4.001117 1.350714      689
+           Odisha   0.963360 1.888668 1.016238      760
+       Puducherry   0.763518 5.701237 2.346095      638
+           Punjab   0.926891 3.896204 1.338645      397
+           Sikkim  -0.275601 0.922080 0.555731      226
+       Tamil Nadu   0.724234 7.750949 3.183020      796
+        Telangana   0.851879 4.930345 1.903942      393
+          Tripura   0.919773 3.128734 1.111504      441
+    Uttar Pradesh   0.936914 2.823609 1.286245      824
+      Uttarakhand   0.940154 2.533054 0.982249      727
+      West Bengal   0.736219 6.075418 1.800665     1069
+
+--- results/literature_comparison.csv  (shape: 4 rows x 4 cols) ---
+       Paper          Model  Reported_R2  Year
+Smith et al.  Random Forest       0.8800  2021
+Kumar et al.        XGBoost       0.9100  2022
+ Chen & Wang Neural Network       0.8950  2023
+Current Work        XGBoost       0.9317  2026
+
+--- results/table_feature_importance.csv  (shape: 101 rows x 2 cols) ---
+                        Feature  Importance
+                         num__N    0.186692
+        cat__State_Chhattisgarh    0.059634
+    cat__State_Himachal Pradesh    0.058294
+   cat__State_Jammu and Kashmir    0.048977
+             cat__State_Mizoram    0.039397
+           cat__State_Meghalaya    0.038903
+   cat__State_Arunachal Pradesh    0.032672
+             cat__Crop_Turmeric    0.032496
+            cat__Crop_Sugarcane    0.031223
+             cat__State_Gujarat    0.029787
+                         num__K    0.025434
+         cat__State_West Bengal    0.024410
+                cat__Crop_Bajra    0.023986
+      cat__State_Madhya Pradesh    0.020650
+         cat__Crop_Dry chillies    0.020509
+           cat__State_Karnataka    0.018711
+           cat__State_Jharkhand    0.017017
+              cat__State_Kerala    0.016622
+          cat__State_Tamil Nadu    0.016185
+                cat__Crop_Onion    0.016111
+           num__Annual_Rainfall    0.015902
+         cat__State_Maharashtra    0.013642
+      cat__State_Andhra Pradesh    0.011861
+             cat__Season_Winter    0.011415
+         cat__Crop_Sweet potato    0.011153
+             cat__State_Tripura    0.008797
+       cat__State_Uttar Pradesh    0.008185
+            cat__State_Nagaland    0.008153
+          cat__State_Puducherry    0.007895
+           cat__State_Telangana    0.007723
+                 cat__Crop_Jute    0.007428
+         cat__Crop_Cotton(lint)    0.007020
+             cat__Season_Kharif    0.006820
+               cat__Crop_Ginger    0.006777
+                cat__Crop_Mesta    0.006428
+             cat__State_Manipur    0.005950
+              cat__Crop_Tapioca    0.005877
+             cat__State_Haryana    0.005263
+               cat__Crop_Garlic    0.005108
+         cat__Season_Whole Year    0.005030
+               cat__State_Delhi    0.004630
+             cat__Season_Summer    0.004243
+         cat__State_Uttarakhand    0.004150
+           num__solar_radiation    0.003847
+               cat__State_Bihar    0.003811
+               cat__Season_Rabi    0.003422
+                 cat__State_Goa    0.003388
+                         num__P    0.003385
+              cat__Crop_Tobacco    0.003351
+                 num__Crop_Year    0.003221
+              cat__State_Punjab    0.002866
+              cat__Crop_Sesamum    0.002629
+       cat__Crop_other oilseeds    0.002501
+               cat__Crop_Potato    0.002372
+                  num__humidity    0.002371
+    cat__Crop_Rapeseed &Mustard    0.002356
+               cat__State_Assam    0.002143
+                cat__Crop_Maize    0.001972
+                num__wind_speed    0.001733
+            cat__Crop_Arhar/Tur    0.001635
+               num__temperature    0.001535
+         num__Fertilizer_per_ha    0.001395
+             cat__Crop_Arecanut    0.001384
+                cat__Crop_Jowar    0.001303
+              cat__State_Odisha    0.001089
+cat__Crop_Peas & beans (Pulses)    0.000970
+            cat__Crop_Cashewnut    0.000954
+            cat__Crop_Guar seed    0.000885
+             cat__Crop_Sannhamp    0.000877
+            cat__Crop_Coriander    0.000593
+                 cat__Crop_Rice    0.000584
+             cat__Crop_Cardamom    0.000554
+          cat__Crop_Castor seed    0.000516
+            cat__Crop_Sunflower    0.000505
+                 cat__Crop_Ragi    0.000425
+                cat__Crop_Wheat    0.000332
+    cat__Crop_Moong(Green Gram)    0.000314
+             cat__Season_Autumn    0.000294
+        cat__Crop_Other Cereals    0.000267
+               cat__Crop_Barley    0.000239
+                 cat__Crop_Urad    0.000219
+             cat__Crop_Soyabean    0.000217
+       cat__Crop_Oilseeds total    0.000152
+   cat__Crop_Other  Rabi pulses    0.000138
+              cat__State_Sikkim    0.000095
+               cat__Crop_Masoor    0.000000
+              cat__Crop_Linseed    0.000000
+           cat__Crop_Horse-gram    0.000000
+              cat__Crop_Khesari    0.000000
+                 cat__Crop_Gram    0.000000
+        cat__Crop_Cowpea(Lobia)    0.000000
+            cat__Crop_Groundnut    0.000000
+              cat__Crop_Coconut    0.000000
+         cat__Crop_Black pepper    0.000000
+               cat__Crop_Banana    0.000000
+        cat__Crop_Small millets    0.000000
+           cat__Crop_Niger seed    0.000000
+  cat__Crop_Other Kharif pulses    0.000000
+            cat__Crop_Safflower    0.000000
+  cat__Crop_Other Summer Pulses    0.000000
+                 cat__Crop_Moth    0.000000
+
+--- results/table_model_metrics.csv  (shape: 4 rows x 6 cols) ---
+            Model      MAE     RMSE       R2    CV_R2     SMAPE
+Linear Regression 2.666508 6.152811 0.667116 0.704713 94.845148
+    Decision Tree 0.876108 3.001302 0.920793 0.899397 29.245212
+    Random Forest 0.925065 2.686721 0.936527 0.927740 33.147533
+          XGBoost 1.053981 2.688705 0.936433 0.931735 38.921889
+
+--- results/table_per_crop.csv  (shape: 55 rows x 5 cols) ---
+                 Crop  Samples      MAE      RMSE        R2
+              Tapioca       35 2.871515  4.134661  0.879836
+            Sugarcane      124 7.617231 11.290994  0.858921
+               Banana       44 4.851593  6.904395  0.841396
+                Bajra      122 0.751887  1.893358  0.835308
+                Onion       86 3.051258  4.023048  0.733731
+                 Jute       37 2.225557  2.745751  0.705769
+               Potato      130 2.570637  3.597314  0.695478
+               Garlic       57 1.629167  2.454583  0.611706
+                Wheat      112 0.528145  0.703135  0.595558
+               Ginger       75 3.028957  4.390219  0.577084
+               Barley       69 0.552758  0.628026  0.552319
+                Maize      195 0.858692  1.650947  0.536256
+    Rapeseed &Mustard       93 0.283160  0.486457  0.515328
+         Dry chillies       83 1.046555  1.477216  0.486725
+                 Ragi      102 0.354290  0.543368  0.450496
+                 Rice      249 0.427636  0.604586  0.441130
+             Turmeric       72 1.662822  2.480895  0.430491
+Peas & beans (Pulses)       79 0.486955  0.982339  0.426473
+             Arecanut       31 1.055077  1.932699  0.423748
+         Sweet potato       52 2.845702  3.602552  0.398980
+                Mesta       42 2.239040  3.012802  0.385420
+   Other  Rabi pulses       69 0.271385  0.466781  0.313492
+       other oilseeds       33 1.564745  3.924655  0.304736
+                Jowar      108 0.362819  0.465900  0.276985
+            Sunflower       73 0.316287  0.419524  0.234017
+             Sannhamp       27 1.296086  1.856684  0.214949
+              Tobacco       68 1.201016  1.720292  0.207875
+  Other Kharif pulses       70 0.226942  0.280585  0.170693
+                 Gram       85 0.336868  0.884920  0.166125
+            Arhar/Tur       93 0.242095  0.336596  0.057686
+         Cotton(lint)       97 0.727716  0.992988  0.053642
+            Groundnut      165 0.475036  0.660346  0.015102
+          Castor seed       57 0.251276  0.319663 -0.042179
+            Coriander       37 0.341782  0.407077 -0.076425
+            Safflower       27 0.142070  0.222779 -0.089479
+             Cardamom       12 0.540914  0.815422 -0.117050
+        Cowpea(Lobia)       23 0.432135  0.567140 -0.122204
+        Small millets       97 0.249014  0.314531 -0.137297
+               Masoor       57 0.173342  0.306332 -0.277244
+       Oilseeds total        6 2.294271  3.870003 -0.386585
+             Soyabean       70 0.395293  0.458148 -0.454320
+                 Urad      145 0.227712  0.290727 -0.514477
+    Moong(Green Gram)      141 0.217157  0.316200 -0.591917
+         Black pepper       32 0.851196  1.051428 -0.787718
+           Horse-gram       70 0.217749  0.277610 -0.814047
+              Sesamum      136 0.253457  0.329982 -0.967964
+            Guar seed       11 0.160464  0.216634 -1.115045
+              Khesari       18 0.289963  0.417650 -1.163849
+        Other Cereals       26 0.414727  0.512140 -1.487312
+            Cashewnut       20 0.702187  0.952270 -1.491423
+              Linseed       67 0.229642  0.304130 -1.510318
+           Niger seed       33 0.235534  0.303830 -1.521634
+                 Moth       21 0.289947  0.361152 -2.367133
+  Other Summer Pulses        3 0.388579  0.410645 -5.711303
+              Coconut        1 3.322193  3.322193       NaN
+
+
+======================================================================
+5. RESULTS SUMMARIES (results/*.json)
+======================================================================
+--- results/generalization_report.json ---
+{
+  "kfold_cv_r2": 0.931734,
+  "kfold_cv_r2_std": 0.007169,
+  "kfold_cv_rmse": 2.793159,
+  "kfold_cv_mae": 1.027093,
+  "loyo_mean_r2": 0.931806,
+  "loyo_mean_rmse": 2.696943,
+  "loyo_mean_mae": 1.00019,
+  "loro_mean_r2": -0.602383,
+  "loro_mean_rmse": 5.691467,
+  "loro_mean_mae": 2.092297,
+  "drop_vs_loyo": -7.2e-05,
+  "drop_vs_loro": 1.534117,
+  "interpretation": "KFold CV R\u00b2=0.9317 \u00b1 0.0072. LOYO R\u00b2=0.9318 (drop=-0.0001). LORO R\u00b2=-0.6024 (drop=1.5341). A smaller drop indicates stronger temporal/spatial generalization."
+}
+
+--- results/significance_test.json ---
+{
+  "model_a": "Random Forest",
+  "model_b": "XGBoost",
+  "model_a_cv_r2_mean": 0.92774,
+  "model_b_cv_r2_mean": 0.931735,
+  "model_a_fold_scores": [
+    0.935712,
+    0.926177,
+    0.937255,
+    0.91792,
+    0.921637
+  ],
+  "model_b_fold_scores": [
+    0.936652,
+    0.930336,
+    0.940973,
+    0.922834,
+    0.927877
+  ],
+  "t_statistic": -4.563195,
+  "p_value": 0.010314,
+  "significant": true,
+  "alpha": 0.05,
+  "interpretation": "Random Forest (R\u00b2=0.9277) vs XGBoost (R\u00b2=0.9317): difference is statistically significant (t=-4.5632, p=0.0103, \u03b1=0.05)."
+}
+
+--- results/research_summary.json ---
+{
+  "training_timestamp": "2026-09-02T18:30:11.362318",
+  "selected_model": "XGBoost",
+  "selection_metric": "CV_R2",
+  "selected_score": 0.931735,
+  "training_rows": 15545,
+  "feature_count": 101,
+  "all_models": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 2.6665077598295577,
+      "RMSE": 6.152811070672939,
+      "R2": 0.6671156629464982,
+      "CV_R2": 0.7047127071120342,
+      "SMAPE": 94.84514792157037
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 0.876107508880185,
+      "RMSE": 3.001301842961915,
+      "R2": 0.9207926376266814,
+      "CV_R2": 0.8993965421120167,
+      "SMAPE": 29.245212444548873
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 0.9250651612918056,
+      "RMSE": 2.6867214011577993,
+      "R2": 0.9365266425629118,
+      "CV_R2": 0.9277401761440054,
+      "SMAPE": 33.1475334656646
+    },
+    {
+      "Model": "XGBoost",
+      "MAE": 1.0539811194225488,
+      "RMSE": 2.6887053360838453,
+      "R2": 0.93643286767111,
+      "CV_R2": 0.931734537310198,
+      "SMAPE": 38.921888746702244
+    }
+  ],
+  "top_10_crops": [
+    {
+      "Crop": "Tapioca",
+      "Samples": 35,
+      "MAE": 2.8715150822839006,
+      "RMSE": 4.134660975698878,
+      "R2": 0.8798363621700707
+    },
+    {
+      "Crop": "Sugarcane",
+      "Samples": 124,
+      "MAE": 7.617231236956252,
+      "RMSE": 11.290994206385214,
+      "R2": 0.8589209870656976
+    },
+    {
+      "Crop": "Banana",
+      "Samples": 44,
+      "MAE": 4.851593373119912,
+      "RMSE": 6.9043952290810156,
+      "R2": 0.8413959988890811
+    },
+    {
+      "Crop": "Bajra",
+      "Samples": 122,
+      "MAE": 0.7518870672363654,
+      "RMSE": 1.893357955260358,
+      "R2": 0.8353075661040094
+    },
+    {
+      "Crop": "Onion",
+      "Samples": 86,
+      "MAE": 3.0512579021627704,
+      "RMSE": 4.023048011558877,
+      "R2": 0.7337307019806865
+    },
+    {
+      "Crop": "Jute",
+      "Samples": 37,
+      "MAE": 2.2255571766043825,
+      "RMSE": 2.7457510389260724,
+      "R2": 0.7057689210490778
+    },
+    {
+      "Crop": "Potato",
+      "Samples": 130,
+      "MAE": 2.57063706493273,
+      "RMSE": 3.5973135393614446,
+      "R2": 0.6954784976862973
+    },
+    {
+      "Crop": "Garlic",
+      "Samples": 57,
+      "MAE": 1.629166656108104,
+      "RMSE": 2.4545833725705184,
+      "R2": 0.6117056787918371
+    },
+    {
+      "Crop": "Wheat",
+      "Samples": 112,
+      "MAE": 0.5281449483627076,
+      "RMSE": 0.7031345571535788,
+      "R2": 0.5955577131510632
+    },
+    {
+      "Crop": "Ginger",
+      "Samples": 75,
+      "MAE": 3.0289567706616456,
+      "RMSE": 4.390219344888787,
+      "R2": 0.5770841534493828
+    }
+  ],
+  "bottom_10_crops": [
+    {
+      "Crop": "Horse-gram",
+      "Samples": 70,
+      "MAE": 0.21774892340241384,
+      "RMSE": 0.27761023267620755,
+      "R2": -0.8140473602345528
+    },
+    {
+      "Crop": "Sesamum",
+      "Samples": 136,
+      "MAE": 0.2534569956289848,
+      "RMSE": 0.32998205585941764,
+      "R2": -0.9679641390215616
+    },
+    {
+      "Crop": "Guar seed",
+      "Samples": 11,
+      "MAE": 0.1604637780260398,
+      "RMSE": 0.2166344704310265,
+      "R2": -1.1150449904105915
+    },
+    {
+      "Crop": "Khesari",
+      "Samples": 18,
+      "MAE": 0.2899630994051211,
+      "RMSE": 0.41764971323805133,
+      "R2": -1.1638487214759614
+    },
+    {
+      "Crop": "Other Cereals",
+      "Samples": 26,
+      "MAE": 0.4147272593799614,
+      "RMSE": 0.5121397043804691,
+      "R2": -1.4873121965577085
+    },
+    {
+      "Crop": "Cashewnut",
+      "Samples": 20,
+      "MAE": 0.7021873746188587,
+      "RMSE": 0.9522697288886561,
+      "R2": -1.4914234430465076
+    },
+    {
+      "Crop": "Linseed",
+      "Samples": 67,
+      "MAE": 0.22964165465515105,
+      "RMSE": 0.3041295897692065,
+      "R2": -1.510317547713167
+    },
+    {
+      "Crop": "Niger seed",
+      "Samples": 33,
+      "MAE": 0.23553404281294688,
+      "RMSE": 0.30383003503272626,
+      "R2": -1.5216341379560587
+    },
+    {
+      "Crop": "Moth",
+      "Samples": 21,
+      "MAE": 0.2899474379618958,
+      "RMSE": 0.36115232425010163,
+      "R2": -2.3671327222678737
+    },
+    {
+      "Crop": "Other Summer Pulses",
+      "Samples": 3,
+      "MAE": 0.38857916006014,
+      "RMSE": 0.4106450483893271,
+      "R2": -5.711303396611505
+    }
+  ],
+  "best_crop": "Tapioca",
+  "worst_crop": "Other Summer Pulses",
+  "num_crops": 55,
+  "ablation_best_r2": 0.93643286767111,
+  "ablation_gain": 0.332963901879313,
+  "cv_r2_mean": 0.931734,
+  "cv_r2_std": 0.007169,
+  "cv_rmse_mean": 2.793159,
+  "cv_mae_mean": 1.027093,
+  "cv_fold_scores": [
+    {
+      "Fold": 1,
+      "R2": 0.936652,
+      "RMSE": 2.684066,
+      "MAE": 1.049333
+    },
+    {
+      "Fold": 2,
+      "R2": 0.930336,
+      "RMSE": 2.851865,
+      "MAE": 1.010633
+    },
+    {
+      "Fold": 3,
+      "R2": 0.940973,
+      "RMSE": 2.646355,
+      "MAE": 1.009962
+    },
+    {
+      "Fold": 4,
+      "R2": 0.922834,
+      "RMSE": 2.931095,
+      "MAE": 1.043895
+    },
+    {
+      "Fold": 5,
+      "R2": 0.927877,
+      "RMSE": 2.852414,
+      "MAE": 1.021641
+    }
+  ],
+  "significance_test": {
+    "model_a": "Random Forest",
+    "model_b": "XGBoost",
+    "model_a_cv_r2_mean": 0.92774,
+    "model_b_cv_r2_mean": 0.931735,
+    "model_a_fold_scores": [
+      0.935712,
+      0.926177,
+      0.937255,
+      0.91792,
+      0.921637
+    ],
+    "model_b_fold_scores": [
+      0.936652,
+      0.930336,
+      0.940973,
+      0.922834,
+      0.927877
+    ],
+    "t_statistic": -4.563195,
+    "p_value": 0.010314,
+    "significant": true,
+    "alpha": 0.05,
+    "interpretation": "Random Forest (R\u00b2=0.9277) vs XGBoost (R\u00b2=0.9317): difference is statistically significant (t=-4.5632, p=0.0103, \u03b1=0.05)."
+  },
+  "loyo_mean_r2": 0.931806,
+  "loyo_mean_rmse": 2.696943,
+  "loyo_mean_mae": 1.00019,
+  "loyo_year_results": [
+    {
+      "Year": 1997,
+      "R2": 0.722893,
+      "RMSE": 6.163328,
+      "MAE": 1.213443,
+      "Samples": 406
+    },
+    {
+      "Year": 1998,
+      "R2": 0.953994,
+      "RMSE": 2.298143,
+      "MAE": 1.024867,
+      "Samples": 640
+    },
+    {
+      "Year": 1999,
+      "R2": 0.95835,
+      "RMSE": 2.349474,
+      "MAE": 0.930177,
+      "Samples": 643
+    },
+    {
+      "Year": 2000,
+      "R2": 0.954531,
+      "RMSE": 2.230186,
+      "MAE": 0.921626,
+      "Samples": 764
+    },
+    {
+      "Year": 2001,
+      "R2": 0.966496,
+      "RMSE": 2.085552,
+      "MAE": 0.832463,
+      "Samples": 743
+    },
+    {
+      "Year": 2002,
+      "R2": 0.958227,
+      "RMSE": 2.143305,
+      "MAE": 0.923502,
+      "Samples": 807
+    },
+    {
+      "Year": 2003,
+      "R2": 0.939588,
+      "RMSE": 2.59411,
+      "MAE": 1.018009,
+      "Samples": 793
+    },
+    {
+      "Year": 2004,
+      "R2": 0.970391,
+      "RMSE": 1.70543,
+      "MAE": 0.798097,
+      "Samples": 779
+    },
+    {
+      "Year": 2005,
+      "R2": 0.955327,
+      "RMSE": 2.264484,
+      "MAE": 0.92608,
+      "Samples": 802
+    },
+    {
+      "Year": 2006,
+      "R2": 0.946146,
+      "RMSE": 2.311579,
+      "MAE": 0.894071,
+      "Samples": 814
+    },
+    {
+      "Year": 2007,
+      "R2": 0.942206,
+      "RMSE": 2.583834,
+      "MAE": 0.964881,
+      "Samples": 820
+    },
+    {
+      "Year": 2008,
+      "R2": 0.959054,
+      "RMSE": 2.135699,
+      "MAE": 0.902876,
+      "Samples": 837
+    },
+    {
+      "Year": 2009,
+      "R2": 0.875397,
+      "RMSE": 4.046636,
+      "MAE": 1.114259,
+      "Samples": 857
+    },
+    {
+      "Year": 2010,
+      "R2": 0.934799,
+      "RMSE": 2.468931,
+      "MAE": 0.918047,
+      "Samples": 850
+    },
+    {
+      "Year": 2011,
+      "R2": 0.926446,
+      "RMSE": 2.549731,
+      "MAE": 0.949623,
+      "Samples": 896
+    },
+    {
+      "Year": 2012,
+      "R2": 0.881109,
+      "RMSE": 3.717644,
+      "MAE": 1.111797,
+      "Samples": 887
+    },
+    {
+      "Year": 2013,
+      "R2": 0.936939,
+      "RMSE": 2.857562,
+      "MAE": 1.110417,
+      "Samples": 966
+    },
+    {
+      "Year": 2014,
+      "R2": 0.957161,
+      "RMSE": 2.216878,
+      "MAE": 1.004428,
+      "Samples": 954
+    },
+    {
+      "Year": 2015,
+      "R2": 0.948963,
+      "RMSE": 2.394008,
+      "MAE": 1.047379,
+      "Samples": 989
+    },
+    {
+      "Year": 2016,
+      "R2": 0.942185,
+      "RMSE": 2.515412,
+      "MAE": 1.077972,
+      "Samples": 1027
+    },
+    {
+      "Year": 2017,
+      "R2": 0.960202,
+      "RMSE": 2.157208,
+      "MAE": 0.987726,
+      "Samples": 1059
+    },
+    {
+      "Year": 2018,
+      "R2": 0.900361,
+      "RMSE": 3.519417,
+      "MAE": 1.199213,
+      "Samples": 1052
+    },
+    {
+      "Year": 2019,
+      "R2": 0.94078,
+      "RMSE": 2.721145,
+      "MAE": 1.133423,
+      "Samples": 1047
+    }
+  ],
+  "loro_mean_r2": -0.602383,
+  "loro_mean_rmse": 5.691467,
+  "loro_mean_mae": 2.092297,
+  "loro_state_results": [
+    {
+      "State": "Andhra Pradesh",
+      "R2": 0.805893,
+      "RMSE": 5.384449,
+      "MAE": 2.007252,
+      "Samples": 1242
+    },
+    {
+      "State": "Arunachal Pradesh",
+      "R2": -1.32793,
+      "RMSE": 7.538657,
+      "MAE": 2.755275,
+      "Samples": 292
+    },
+    {
+      "State": "Assam",
+      "R2": 0.863071,
+      "RMSE": 2.610158,
+      "MAE": 1.52881,
+      "Samples": 708
+    },
+    {
+      "State": "Bihar",
+      "R2": 0.866755,
+      "RMSE": 2.906303,
+      "MAE": 1.226042,
+      "Samples": 895
+    },
+    {
+      "State": "Chhattisgarh",
+      "R2": -2.025607,
+      "RMSE": 9.649169,
+      "MAE": 3.044381,
+      "Samples": 915
+    },
+    {
+      "State": "Delhi",
+      "R2": 0.864294,
+      "RMSE": 6.900289,
+      "MAE": 3.124166,
+      "Samples": 200
+    },
+    {
+      "State": "Goa",
+      "R2": 0.811649,
+      "RMSE": 6.439437,
+      "MAE": 2.478365,
+      "Samples": 229
+    },
+    {
+      "State": "Gujarat",
+      "R2": 0.738933,
+      "RMSE": 8.151185,
+      "MAE": 2.853531,
+      "Samples": 815
+    },
+    {
+      "State": "Haryana",
+      "R2": 0.795822,
+      "RMSE": 5.333247,
+      "MAE": 2.326029,
+      "Samples": 630
+    },
+    {
+      "State": "Himachal Pradesh",
+      "R2": -6.005313,
+      "RMSE": 8.456538,
+      "MAE": 2.358516,
+      "Samples": 616
+    },
+    {
+      "State": "Jammu and Kashmir",
+      "R2": -15.369634,
+      "RMSE": 8.862989,
+      "MAE": 2.650115,
+      "Samples": 631
+    },
+    {
+      "State": "Jharkhand",
+      "R2": 0.203378,
+      "RMSE": 7.340222,
+      "MAE": 2.310857,
+      "Samples": 269
+    },
+    {
+      "State": "Karnataka",
+      "R2": 0.766377,
+      "RMSE": 5.431982,
+      "MAE": 1.903529,
+      "Samples": 1409
+    },
+    {
+      "State": "Kerala",
+      "R2": 0.5982,
+      "RMSE": 9.38166,
+      "MAE": 3.908441,
+      "Samples": 511
+    },
+    {
+      "State": "Madhya Pradesh",
+      "R2": 0.531415,
+      "RMSE": 5.330452,
+      "MAE": 1.979901,
+      "Samples": 839
+    },
+    {
+      "State": "Maharashtra",
+      "R2": 0.820168,
+      "RMSE": 5.305008,
+      "MAE": 1.167006,
+      "Samples": 762
+    },
+    {
+      "State": "Manipur",
+      "R2": 0.702005,
+      "RMSE": 5.581034,
+      "MAE": 2.744939,
+      "Samples": 444
+    },
+    {
+      "State": "Meghalaya",
+      "R2": -8.232851,
+      "RMSE": 8.623843,
+      "MAE": 2.767328,
+      "Samples": 649
+    },
+    {
+      "State": "Mizoram",
+      "R2": -2.702464,
+      "RMSE": 7.865969,
+      "MAE": 2.759373,
+      "Samples": 416
+    },
+    {
+      "State": "Nagaland",
+      "R2": 0.737014,
+      "RMSE": 4.001117,
+      "MAE": 1.350714,
+      "Samples": 689
+    },
+    {
+      "State": "Odisha",
+      "R2": 0.96336,
+      "RMSE": 1.888668,
+      "MAE": 1.016238,
+      "Samples": 760
+    },
+    {
+      "State": "Puducherry",
+      "R2": 0.763518,
+      "RMSE": 5.701237,
+      "MAE": 2.346095,
+      "Samples": 638
+    },
+    {
+      "State": "Punjab",
+      "R2": 0.926891,
+      "RMSE": 3.896204,
+      "MAE": 1.338645,
+      "Samples": 397
+    },
+    {
+      "State": "Sikkim",
+      "R2": -0.275601,
+      "RMSE": 0.92208,
+      "MAE": 0.555731,
+      "Samples": 226
+    },
+    {
+      "State": "Tamil Nadu",
+      "R2": 0.724234,
+      "RMSE": 7.750949,
+      "MAE": 3.18302,
+      "Samples": 796
+    },
+    {
+      "State": "Telangana",
+      "R2": 0.851879,
+      "RMSE": 4.930345,
+      "MAE": 1.903942,
+      "Samples": 393
+    },
+    {
+      "State": "Tripura",
+      "R2": 0.919773,
+      "RMSE": 3.128734,
+      "MAE": 1.111504,
+      "Samples": 441
+    },
+    {
+      "State": "Uttar Pradesh",
+      "R2": 0.936914,
+      "RMSE": 2.823609,
+      "MAE": 1.286245,
+      "Samples": 824
+    },
+    {
+      "State": "Uttarakhand",
+      "R2": 0.940154,
+      "RMSE": 2.533054,
+      "MAE": 0.982249,
+      "Samples": 727
+    },
+    {
+      "State": "West Bengal",
+      "R2": 0.736219,
+      "RMSE": 6.075418,
+      "MAE": 1.800665,
+      "Samples": 1069
+    }
+  ],
+  "generalization_report": {
+    "kfold_cv_r2": 0.931734,
+    "kfold_cv_r2_std": 0.007169,
+    "kfold_cv_rmse": 2.793159,
+    "kfold_cv_mae": 1.027093,
+    "loyo_mean_r2": 0.931806,
+    "loyo_mean_rmse": 2.696943,
+    "loyo_mean_mae": 1.00019,
+    "loro_mean_r2": -0.602383,
+    "loro_mean_rmse": 5.691467,
+    "loro_mean_mae": 2.092297,
+    "drop_vs_loyo": -7.2e-05,
+    "drop_vs_loro": 1.534117,
+    "interpretation": "KFold CV R\u00b2=0.9317 \u00b1 0.0072. LOYO R\u00b2=0.9318 (drop=-0.0001). LORO R\u00b2=-0.6024 (drop=1.5341). A smaller drop indicates stronger temporal/spatial generalization."
+  },
+  "shap_stability_summary": {
+    "stable_features": [
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "changed_features": [
+      "cat__Crop_Dry chillies",
+      "cat__Crop_Ginger",
+      "cat__Crop_Jute",
+      "cat__Crop_Mesta",
+      "cat__Crop_Tapioca",
+      "cat__Season_Whole Year",
+      "cat__State_Himachal Pradesh",
+      "cat__State_Kerala",
+      "cat__State_Meghalaya",
+      "cat__State_Mizoram",
+      "cat__State_Puducherry"
+    ],
+    "consistency_score": 0.7,
+    "kfold_top20": [
+      "cat__Crop_Ginger",
+      "cat__Crop_Jute",
+      "cat__Crop_Mesta",
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Season_Whole Year",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Himachal Pradesh",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Meghalaya",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "loyo_top20": [
+      "cat__Crop_Ginger",
+      "cat__Crop_Mesta",
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Crop_Tapioca",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Himachal Pradesh",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Kerala",
+      "cat__State_Mizoram",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "loro_top20": [
+      "cat__Crop_Dry chillies",
+      "cat__Crop_Jute",
+      "cat__Crop_Onion",
+      "cat__Crop_Sugarcane",
+      "cat__Crop_Sweet potato",
+      "cat__Crop_Tapioca",
+      "cat__Season_Whole Year",
+      "cat__State_Andhra Pradesh",
+      "cat__State_Chhattisgarh",
+      "cat__State_Gujarat",
+      "cat__State_Jammu and Kashmir",
+      "cat__State_Karnataka",
+      "cat__State_Mizoram",
+      "cat__State_Puducherry",
+      "cat__State_Tamil Nadu",
+      "cat__State_West Bengal",
+      "num__Annual_Rainfall",
+      "num__Crop_Year",
+      "num__K",
+      "num__N"
+    ],
+    "sources_used": [
+      "kfold",
+      "loyo",
+      "loro"
+    ],
+    "interpretation": "14 of 20 features are consistently important across 3 validation scheme(s) (consistency score = 0.70). 11 features show ranking variability."
+  }
+}
+
+--- results/research_claims.json ---
+{
+  "best_model": "XGBoost",
+  "r2": 0.936433,
+  "cv_r2_mean": 0.931735,
+  "cv_r2_std": 0.006412,
+  "response_time": 196.73,
+  "gpu_required": false,
+  "weather_cache_enabled": true,
+  "soil_override_enabled": true,
+  "ablation_study_complete": true,
+  "per_crop_analysis_complete": true,
+  "significance_test_complete": true
+}
+
+--- results/shap_stability_report.json ---
+{
+  "stable_features": [
+    "cat__Crop_Onion",
+    "cat__Crop_Sugarcane",
+    "cat__Crop_Sweet potato",
+    "cat__State_Andhra Pradesh",
+    "cat__State_Chhattisgarh",
+    "cat__State_Gujarat",
+    "cat__State_Jammu and Kashmir",
+    "cat__State_Karnataka",
+    "cat__State_Tamil Nadu",
+    "cat__State_West Bengal",
+    "num__Annual_Rainfall",
+    "num__Crop_Year",
+    "num__K",
+    "num__N"
+  ],
+  "changed_features": [
+    "cat__Crop_Dry chillies",
+    "cat__Crop_Ginger",
+    "cat__Crop_Jute",
+    "cat__Crop_Mesta",
+    "cat__Crop_Tapioca",
+    "cat__Season_Whole Year",
+    "cat__State_Himachal Pradesh",
+    "cat__State_Kerala",
+    "cat__State_Meghalaya",
+    "cat__State_Mizoram",
+    "cat__State_Puducherry"
+  ],
+  "consistency_score": 0.7,
+  "kfold_top20": [
+    "cat__Crop_Ginger",
+    "cat__Crop_Jute",
+    "cat__Crop_Mesta",
+    "cat__Crop_Onion",
+    "cat__Crop_Sugarcane",
+    "cat__Crop_Sweet potato",
+    "cat__Season_Whole Year",
+    "cat__State_Andhra Pradesh",
+    "cat__State_Chhattisgarh",
+    "cat__State_Gujarat",
+    "cat__State_Himachal Pradesh",
+    "cat__State_Jammu and Kashmir",
+    "cat__State_Karnataka",
+    "cat__State_Meghalaya",
+    "cat__State_Tamil Nadu",
+    "cat__State_West Bengal",
+    "num__Annual_Rainfall",
+    "num__Crop_Year",
+    "num__K",
+    "num__N"
+  ],
+  "loyo_top20": [
+    "cat__Crop_Ginger",
+    "cat__Crop_Mesta",
+    "cat__Crop_Onion",
+    "cat__Crop_Sugarcane",
+    "cat__Crop_Sweet potato",
+    "cat__Crop_Tapioca",
+    "cat__State_Andhra Pradesh",
+    "cat__State_Chhattisgarh",
+    "cat__State_Gujarat",
+    "cat__State_Himachal Pradesh",
+    "cat__State_Jammu and Kashmir",
+    "cat__State_Karnataka",
+    "cat__State_Kerala",
+    "cat__State_Mizoram",
+    "cat__State_Tamil Nadu",
+    "cat__State_West Bengal",
+    "num__Annual_Rainfall",
+    "num__Crop_Year",
+    "num__K",
+    "num__N"
+  ],
+  "loro_top20": [
+    "cat__Crop_Dry chillies",
+    "cat__Crop_Jute",
+    "cat__Crop_Onion",
+    "cat__Crop_Sugarcane",
+    "cat__Crop_Sweet potato",
+    "cat__Crop_Tapioca",
+    "cat__Season_Whole Year",
+    "cat__State_Andhra Pradesh",
+    "cat__State_Chhattisgarh",
+    "cat__State_Gujarat",
+    "cat__State_Jammu and Kashmir",
+    "cat__State_Karnataka",
+    "cat__State_Mizoram",
+    "cat__State_Puducherry",
+    "cat__State_Tamil Nadu",
+    "cat__State_West Bengal",
+    "num__Annual_Rainfall",
+    "num__Crop_Year",
+    "num__K",
+    "num__N"
+  ],
+  "sources_used": [
+    "kfold",
+    "loyo",
+    "loro"
+  ],
+  "interpretation": "14 of 20 features are consistently important across 3 validation scheme(s) (consistency score = 0.70). 11 features show ranking variability."
+}

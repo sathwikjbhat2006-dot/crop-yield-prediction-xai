@@ -1,0 +1,102 @@
+Feature,Importance
+num__N,0.18669209
+cat__State_Chhattisgarh,0.059634026
+cat__State_Himachal Pradesh,0.05829375
+cat__State_Jammu and Kashmir,0.04897689
+cat__State_Mizoram,0.039396685
+cat__State_Meghalaya,0.038903363
+cat__State_Arunachal Pradesh,0.032671656
+cat__Crop_Turmeric,0.032495674
+cat__Crop_Sugarcane,0.031222744
+cat__State_Gujarat,0.029786605
+num__K,0.025433784
+cat__State_West Bengal,0.024410129
+cat__Crop_Bajra,0.023985825
+cat__State_Madhya Pradesh,0.020649865
+cat__Crop_Dry chillies,0.02050874
+cat__State_Karnataka,0.018711295
+cat__State_Jharkhand,0.0170168
+cat__State_Kerala,0.016622111
+cat__State_Tamil Nadu,0.016184654
+cat__Crop_Onion,0.01611124
+num__Annual_Rainfall,0.015902273
+cat__State_Maharashtra,0.01364158
+cat__State_Andhra Pradesh,0.011860705
+cat__Season_Winter,0.011415139
+cat__Crop_Sweet potato,0.011152939
+cat__State_Tripura,0.008796602
+cat__State_Uttar Pradesh,0.008184503
+cat__State_Nagaland,0.00815283
+cat__State_Puducherry,0.007895255
+cat__State_Telangana,0.0077232025
+cat__Crop_Jute,0.0074276906
+cat__Crop_Cotton(lint),0.0070198188
+cat__Season_Kharif,0.0068202913
+cat__Crop_Ginger,0.006777157
+cat__Crop_Mesta,0.006428272
+cat__State_Manipur,0.0059496756
+cat__Crop_Tapioca,0.0058772215
+cat__State_Haryana,0.005263336
+cat__Crop_Garlic,0.0051084156
+cat__Season_Whole Year,0.005029513
+cat__State_Delhi,0.004630332
+cat__Season_Summer,0.0042426996
+cat__State_Uttarakhand,0.004149998
+num__solar_radiation,0.0038473401
+cat__State_Bihar,0.003810712
+cat__Season_Rabi,0.0034220326
+cat__State_Goa,0.003388385
+num__P,0.00338502
+cat__Crop_Tobacco,0.003350609
+num__Crop_Year,0.0032213563
+cat__State_Punjab,0.0028657704
+cat__Crop_Sesamum,0.0026286703
+cat__Crop_other oilseeds,0.00250069
+cat__Crop_Potato,0.0023723154
+num__humidity,0.0023709158
+cat__Crop_Rapeseed &Mustard,0.0023556994
+cat__State_Assam,0.0021426685
+cat__Crop_Maize,0.0019717645
+num__wind_speed,0.0017333507
+cat__Crop_Arhar/Tur,0.001635085
+num__temperature,0.0015353897
+num__Fertilizer_per_ha,0.0013953791
+cat__Crop_Arecanut,0.0013840204
+cat__Crop_Jowar,0.0013032377
+cat__State_Odisha,0.0010894579
+cat__Crop_Peas & beans (Pulses),0.0009703604
+cat__Crop_Cashewnut,0.00095417956
+cat__Crop_Guar seed,0.0008853652
+cat__Crop_Sannhamp,0.0008774339
+cat__Crop_Coriander,0.00059333246
+cat__Crop_Rice,0.000584173
+cat__Crop_Cardamom,0.0005544451
+cat__Crop_Castor seed,0.0005159733
+cat__Crop_Sunflower,0.0005051362
+cat__Crop_Ragi,0.00042502992
+cat__Crop_Wheat,0.00033155197
+cat__Crop_Moong(Green Gram),0.00031440513
+cat__Season_Autumn,0.00029363198
+cat__Crop_Other Cereals,0.00026662106
+cat__Crop_Barley,0.00023934034
+cat__Crop_Urad,0.00021946843
+cat__Crop_Soyabean,0.00021677781
+cat__Crop_Oilseeds total,0.00015217352
+cat__Crop_Other  Rabi pulses,0.00013789712
+cat__State_Sikkim,9.5341056e-05
+cat__Crop_Masoor,0.0
+cat__Crop_Linseed,0.0
+cat__Crop_Horse-gram,0.0
+cat__Crop_Khesari,0.0
+cat__Crop_Gram,0.0
+cat__Crop_Cowpea(Lobia),0.0
+cat__Crop_Groundnut,0.0
+cat__Crop_Coconut,0.0
+cat__Crop_Black pepper,0.0
+cat__Crop_Banana,0.0
+cat__Crop_Small millets,0.0
+cat__Crop_Niger seed,0.0
+cat__Crop_Other Kharif pulses,0.0
+cat__Crop_Safflower,0.0
+cat__Crop_Other Summer Pulses,0.0
+cat__Crop_Moth,0.0

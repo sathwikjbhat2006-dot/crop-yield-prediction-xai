@@ -1,0 +1,134 @@
+{
+  "training_timestamp": "2026-10-15T18:55:53.455926",
+  "selected_model": "XGBoost",
+  "selection_metric": "CV_R2",
+  "selected_score": 0.931735,
+  "training_rows": 15545,
+  "feature_count": 101,
+  "model_name": "XGBoost",
+  "is_tree_model": true,
+  "r2_score": 0.936433,
+  "rmse": 2.688705,
+  "mae": 1.053981,
+  "cv_r2": 0.931735,
+  "mape": 38.921889,
+  "smape": 38.921889,
+  "feature_names": [
+    "Crop_Year",
+    "Fertilizer_per_ha",
+    "Annual_Rainfall",
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "solar_radiation",
+    "wind_speed",
+    "Crop",
+    "State",
+    "Season"
+  ],
+  "numeric_features": [
+    "Crop_Year",
+    "Fertilizer_per_ha",
+    "Annual_Rainfall",
+    "N",
+    "P",
+    "K",
+    "temperature",
+    "humidity",
+    "solar_radiation",
+    "wind_speed"
+  ],
+  "categorical_features": [
+    "Crop",
+    "State",
+    "Season"
+  ],
+  "all_models": [
+    {
+      "Model": "Linear Regression",
+      "MAE": 2.6665077598295577,
+      "RMSE": 6.152811070672939,
+      "R2": 0.6671156629464982,
+      "CV_R2": 0.7047127071120342,
+      "SMAPE": 94.84514792157037
+    },
+    {
+      "Model": "Decision Tree",
+      "MAE": 0.876107508880185,
+      "RMSE": 3.001301842961915,
+      "R2": 0.9207926376266814,
+      "CV_R2": 0.8993965421120167,
+      "SMAPE": 29.245212444548873
+    },
+    {
+      "Model": "Random Forest",
+      "MAE": 0.9250651612918056,
+      "RMSE": 2.6867214011577993,
+      "R2": 0.9365266425629118,
+      "CV_R2": 0.9277401761440054,
+      "SMAPE": 33.1475334656646
+    },
+    {
+      "Model": "XGBoost",
+      "MAE": 1.0539811194225488,
+      "RMSE": 2.6887053360838453,
+      "R2": 0.93643286767111,
+      "CV_R2": 0.931734537310198,
+      "SMAPE": 38.921888746702244
+    }
+  ],
+  "cv_fold_scores": [
+    0.936652,
+    0.930336,
+    0.940973,
+    0.922834,
+    0.927877
+  ],
+  "cv_r2_std": 0.007169,
+  "cv_rmse_mean": 2.793159,
+  "cv_mae_mean": 1.027093,
+  "significance_test": {
+    "model_a": "Random Forest",
+    "model_b": "XGBoost",
+    "model_a_cv_r2_mean": 0.92774,
+    "model_b_cv_r2_mean": 0.931735,
+    "model_a_fold_scores": [
+      0.935712,
+      0.926177,
+      0.937255,
+      0.91792,
+      0.921637
+    ],
+    "model_b_fold_scores": [
+      0.936652,
+      0.930336,
+      0.940973,
+      0.922834,
+      0.927877
+    ],
+    "t_statistic": -4.563195,
+    "p_value": 0.010314,
+    "significant": true,
+    "alpha": 0.05,
+    "interpretation": "Random Forest (R\u00b2=0.9277) vs XGBoost (R\u00b2=0.9317): difference is statistically significant (t=-4.5632, p=0.0103, \u03b1=0.05)."
+  },
+  "loyo_mean_r2": 0.931806,
+  "loro_mean_r2": -0.602383,
+  "generalization_report": {
+    "kfold_cv_r2": 0.931734,
+    "kfold_cv_r2_std": 0.007169,
+    "kfold_cv_rmse": 2.793159,
+    "kfold_cv_mae": 1.027093,
+    "loyo_mean_r2": 0.931806,
+    "loyo_mean_rmse": 2.696943,
+    "loyo_mean_mae": 1.00019,
+    "loro_mean_r2": -0.602383,
+    "loro_mean_rmse": 5.691467,
+    "loro_mean_mae": 2.092297,
+    "drop_vs_loyo": -7.2e-05,
+    "drop_vs_loro": 1.534117,
+    "interpretation": "KFold CV R\u00b2=0.9317 \u00b1 0.0072. LOYO R\u00b2=0.9318 (drop=-0.0001). LORO R\u00b2=-0.6024 (drop=1.5341). A smaller drop indicates stronger temporal/spatial generalization."
+  }
+}

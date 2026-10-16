@@ -1,0 +1,73 @@
+{
+  "selected_model_name": "XGBoost",
+  "test_samples": 3887,
+  "training_samples": 15545,
+  "category_order": [
+    "Low",
+    "Medium",
+    "High"
+  ],
+  "category_thresholds": {
+    "p33_threshold": 0.71776,
+    "p67_threshold": 1.665994,
+    "units": "tons/hectare",
+    "definitions": {
+      "Low": "yield <= 0.717760 tons/ha (33rd percentile of y_train)",
+      "Medium": "0.717760 < yield <= 1.665994 tons/ha (33rd to 67th percentile of y_train)",
+      "High": "yield > 1.665994 tons/ha (> 67th percentile of y_train)"
+    }
+  },
+  "overall_metrics": {
+    "accuracy": 0.710831,
+    "macro_precision": 0.719232,
+    "macro_recall": 0.707173,
+    "macro_f1": 0.705234
+  },
+  "per_category_metrics": {
+    "Low": {
+      "precision": 0.778029,
+      "recall": 0.558083,
+      "f1_score": 0.649953,
+      "support": 1231
+    },
+    "Medium": {
+      "precision": 0.591369,
+      "recall": 0.659895,
+      "f1_score": 0.623755,
+      "support": 1329
+    },
+    "High": {
+      "precision": 0.788297,
+      "recall": 0.903542,
+      "f1_score": 0.841994,
+      "support": 1327
+    }
+  },
+  "confusion_matrix": [
+    [
+      687,
+      487,
+      57
+    ],
+    [
+      187,
+      877,
+      265
+    ],
+    [
+      9,
+      119,
+      1199
+    ]
+  ],
+  "confusion_matrix_axes": {
+    "rows": "Actual Category",
+    "columns": "Predicted Category",
+    "labels": [
+      "Low",
+      "Medium",
+      "High"
+    ]
+  },
+  "timestamp": "2026-10-15T18:55:56.067213"
+}

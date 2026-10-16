@@ -1,0 +1,25 @@
+{
+  "model_a": "Random Forest",
+  "model_b": "XGBoost",
+  "model_a_cv_r2_mean": 0.92774,
+  "model_b_cv_r2_mean": 0.931735,
+  "model_a_fold_scores": [
+    0.935712,
+    0.926177,
+    0.937255,
+    0.91792,
+    0.921637
+  ],
+  "model_b_fold_scores": [
+    0.936652,
+    0.930336,
+    0.940973,
+    0.922834,
+    0.927877
+  ],
+  "t_statistic": -4.563195,
+  "p_value": 0.010314,
+  "significant": true,
+  "alpha": 0.05,
+  "interpretation": "Random Forest (R\u00b2=0.9277) vs XGBoost (R\u00b2=0.9317): difference is statistically significant (t=-4.5632, p=0.0103, \u03b1=0.05)."
+}

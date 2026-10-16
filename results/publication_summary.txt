@@ -1,0 +1,12 @@
+=================================================
+ EXECUTIVE SUMMARY - PUBLICATION
+=================================================
+Best Model         : XGBoost
+CV-R2              : 0.9317
+Test R2            : 0.9364
+RMSE               : 2.6887
+MAE                : 1.0540
+Dataset Size       : 19432
+Number of Crops    : 55
+Number of Features : 13 (Raw) -> 101 (Encoded)
+=================================================

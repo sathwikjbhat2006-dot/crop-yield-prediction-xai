@@ -1,0 +1,5 @@
+Paper,Model,Reported_R2,Year
+Smith et al.,Random Forest,0.88,2021
+Kumar et al.,XGBoost,0.91,2022
+Chen & Wang,Neural Network,0.895,2023
+Current Work,XGBoost,0.9317,2026

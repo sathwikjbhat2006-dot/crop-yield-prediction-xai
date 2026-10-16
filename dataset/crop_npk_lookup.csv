@@ -1,0 +1,57 @@
+Crop,N,P,K
+Rice,80,40,40
+Wheat,120,60,40
+Maize,100,50,40
+Sugarcane,150,60,100
+Cotton(lint),120,60,60
+Groundnut,25,50,75
+Soyabean,20,60,40
+Potato,120,60,120
+Onion,100,50,100
+Banana,200,60,300
+Gram,20,60,20
+Arhar/Tur,20,60,20
+Bajra,80,40,40
+Jowar,80,40,40
+Ragi,50,25,25
+Barley,80,40,30
+Rapeseed &Mustard,80,40,40
+Sunflower,60,60,60
+Turmeric,100,50,100
+Ginger,75,50,75
+Garlic,100,60,80
+Linseed,40,20,20
+Castor seed,40,20,20
+Sesamum,30,15,15
+Jute,60,30,30
+Coconut,50,30,200
+Coconut,50,30,200
+Arecanut,50,30,100
+Cashewnut,30,20,150
+Black pepper,30,20,100
+Cardamom,30,20,80
+Moong(Green Gram),20,60,20
+Urad,20,60,20
+Cowpea(Lobia),20,60,20
+Horse-gram,15,40,20
+Masoor,20,40,20
+Khesari,20,40,20
+Moth,15,30,20
+Dry chillies,100,50,100
+Coriander,50,25,25
+Tobacco,60,30,100
+Tapioca,100,40,150
+Sweet potato,80,40,100
+Safflower,40,20,20
+Niger seed,20,10,10
+Guar seed,20,40,20
+Small millets,40,20,20
+Other Cereals,60,30,30
+Oilseeds total,40,30,30
+other oilseeds,40,30,30
+Sannhamp,40,20,20
+Mesta,40,20,20
+Peas & beans (Pulses),20,50,20
+Other  Rabi pulses,20,50,20
+Other Kharif pulses,20,50,20
+Other Summer Pulses,20,50,20

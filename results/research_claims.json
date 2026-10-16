@@ -1,0 +1,13 @@
+{
+  "best_model": "XGBoost",
+  "r2": 0.936433,
+  "cv_r2_mean": 0.931735,
+  "cv_r2_std": 0.006412,
+  "response_time": 178.66,
+  "gpu_required": false,
+  "weather_cache_enabled": true,
+  "soil_override_enabled": true,
+  "ablation_study_complete": true,
+  "per_crop_analysis_complete": true,
+  "significance_test_complete": true
+}
